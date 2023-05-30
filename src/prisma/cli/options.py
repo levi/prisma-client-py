@@ -19,6 +19,14 @@ watch: FuncType = click.option(
     help='Watch the Prisma schema and rerun after a change',
 )
 
+generator: FuncType = click.option(
+    '--generator',
+    type=str,
+    multiple=True,
+    required=False,
+    help='Specifies which generator to use to generate assets. This option may be provided multiple times to include multiple generators. By default, all generators in the target schema will be run.',
+)
+
 skip_generate: FuncType = click.option(
     '--skip-generate',
     is_flag=True,
